@@ -39,7 +39,8 @@ entity AirframerHierarchy {
                        on Children.Parent = $self;
 }
 
-view AirframerList as select from AirframerHierarchy {
+
+ view AirframerList as select from AirframerHierarchy {
     Id,
     Name,
     Parent
