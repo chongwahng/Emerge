@@ -22,8 +22,8 @@ annotate em.ProductSurvey with @UI : {
 
     HeaderInfo                          : {
         $Type          : 'UI.HeaderInfoType',
-        TypeName       : '{i18n>ProductSurvey}',
-        TypeNamePlural : '{i18n>ProductSurvey}',
+        TypeName       : 'ProductSurvey',
+        TypeNamePlural : 'ProductSurvey',
         ImageUrl       : 'https://icon-library.com/images/products-icon/products-icon-5.jpg',
         Title          : {Value : RepresentName},
         Description    : {Value : RepresentTitle}
