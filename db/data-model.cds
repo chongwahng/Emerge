@@ -11,11 +11,11 @@ entity ProductSurvey : cuid, managed {
     Customer          : String;
     RepresentName     : String;
     RepresentTitle    : String;
-    Airframer         : String;
-    Program           : String;
-    Component         : String;
+    Airframer         : Association to AirframerList;
+    Program           : Association to ProgramList;
+    Component         : Association to ComponentList;
     Active            : Boolean;
-    ProductType       : String;
+    ProductType       : Association to ProductType;
     Product           : String;
     ProductKitsNumber : Integer;
     BusinessShare     : Integer;
@@ -38,3 +38,21 @@ entity AirframerHierarchy {
         Children : Composition of many AirframerHierarchy
                        on Children.Parent = $self;
 }
+
+view AirframerList as select from AirframerHierarchy {
+    Id,
+    Name,
+    Parent
+} where Type = 'Airframer';
+
+view ProgramList as select from AirframerHierarchy {
+    Id,
+    Name,
+    Parent
+} where Type = 'Program';
+
+view ComponentList as select from AirframerHierarchy {
+    Id,
+    Name,
+    Parent
+} where Type = 'Component';
