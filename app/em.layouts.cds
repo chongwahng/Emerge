@@ -20,7 +20,7 @@ annotate em.ProductSurvey with {
 
 annotate em.ProductSurvey with @UI : {
 
-    HeaderInfo                          : {
+    HeaderInfo                        : {
         $Type          : 'UI.HeaderInfoType',
         TypeName       : '{i18n>ProductSurvey}',
         TypeNamePlural : '{i18n>ProductSurvey}',
@@ -29,7 +29,7 @@ annotate em.ProductSurvey with @UI : {
         Description    : {Value : RepresentTitle}
     },
 
-    PresentationVariant                 : {
+    PresentationVariant               : {
         Text           : 'Default',
         Visualizations : ['@UI.LineItem'],
         SortOrder      : [{
@@ -39,7 +39,7 @@ annotate em.ProductSurvey with @UI : {
         }]
     },
 
-    SelectionFields                     : [
+    SelectionFields                   : [
         Customer,
         Airframer_Id,
         Program_Id,
@@ -49,7 +49,7 @@ annotate em.ProductSurvey with @UI : {
         createdBy
     ],
 
-    LineItem                            : [
+    LineItem                          : [
         {
             $Type : 'UI.DataField',
             Value : Customer
@@ -75,4 +75,122 @@ annotate em.ProductSurvey with @UI : {
             Value : Component_Id
         },
     ],
+    HeaderFacets                      : [{
+        $Type  : 'UI.ReferenceFacet',
+        Target : '@UI.FieldGroup#ClientLinkCRM',
+        Label  : '{i18n>ClientLinkCRM}'
+    }, ],
+
+    Facets                            : [
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'ObjectInformation',
+            Label  : '{i18n>ObjectInformation}',
+            Facets : [{
+                $Type  : 'UI.ReferenceFacet',
+                Target : '@UI.FieldGroup#ObjectInformationFG'
+            }, ]
+        },
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'AdminData',
+            Label  : '{i18n>AdminData}',
+            Facets : [
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#CreationDetailsFG',
+                    Label  : '{i18n>CreationDetails}'
+                },
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#ModificationDetailsFG',
+                    Label  : '{i18n>ModificationDetails}'
+                },
+            ]
+        }
+    ],
+
+    FieldGroup #ClientLinkCRM         : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : Customer
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : RepresentName
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : RepresentTitle
+            },
+        ]
+    },
+
+    FieldGroup #ObjectInformationFG   : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : Airframer_Id
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Program_Id
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Component_Id
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Active
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : ProductType_Id
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Product
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : ProductKitsNumber
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : BusinessShare
+            },
+        ]
+    },
+
+    FieldGroup #CreationDetailsFG     : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : createdAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdBy
+            }
+        ]
+    },
+
+    FieldGroup #ModificationDetailsFG : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy
+            }
+        ]
+    }
 };
