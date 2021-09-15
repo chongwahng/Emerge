@@ -49,6 +49,25 @@
                     "title": "{{appTitle}}",
                     "subTitle": "",
                     "icon": "sap-icon://product"
+                },
+                "ppg-emerge-create-inbound": {
+                    "signature": {
+                        "parameters": {
+                            "preferredMode": {
+                                "required": true,
+                                "defaultValue": {
+                                    "value": "create",
+                                    "format": "plain"
+                                }
+                            }
+                        },
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "ProductSurvey",
+                    "action": "create",
+                    "title": "Emerge",
+                    "subTitle": "Create",
+                    "icon": "sap-icon://create"
                 }
             }
         }
@@ -139,7 +158,18 @@
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
             "considerAnalyticalParameters": true,
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "inboundParameters": { 
+                "Customer": {     
+                    "useForCreate": true   
+                },  
+                "RepresentName": {     
+                    "useForCreate": true   
+                },
+                "RepresentTitle": {     
+                    "useForCreate": true   
+                }      
+            }
         },
         "pages": {
             "ListReport|ProductSurvey": {

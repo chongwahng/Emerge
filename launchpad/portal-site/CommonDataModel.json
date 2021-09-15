@@ -30,6 +30,10 @@
 					"id": "ppg.emerge.ui-0-1631699539905",
 					"appId": "ppg.emerge.ui",
 					"vizId": "ProductSurvey-manage"
+				}, {
+					"id": "ppg.emerge.ui-1-1631717036837",
+					"appId": "ppg.emerge.ui",
+					"vizId": "ProductSurvey-create"
 				}]
 			}
 		}],
