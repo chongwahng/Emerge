@@ -36,6 +36,21 @@
         "sourceTemplate": {
             "id": "ui5template.smartTemplate",
             "version": "1.40.12"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "ppg-emerge-manage-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "ProductSurvey",
+                    "action": "manage",
+                    "title": "{{appTitle}}",
+                    "subTitle": "",
+                    "icon": "sap-icon://product"
+                }
+            }
         }
     },
     "sap.ui": {

@@ -8,6 +8,8 @@ modules:
   path: gen/srv
   requires:
   - name: Emerge-db
+  - name: uaa_Emerge
+  - name: Emerge-dest-srv
   provides:
   - name: srv-api
     properties:
@@ -21,7 +23,30 @@ modules:
   - name: Emerge-db
   parameters:
     buildpack: nodejs_buildpack
-- name: Emerge-app-content
+- name: emerge-approuter
+  type: approuter.nodejs
+  path: emerge-approuter
+  requires:
+  - name: Emerge_html_repo_runtime
+  - name: uaa_Emerge
+  - name: Emerge-dest-srv
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
+  - name: srv-api
+    group: destinations
+    properties:
+      forwardAuthToken: true
+      name: srv-binding
+      strictSSL: true
+      url: ~{srv-url}
+  - name: portal_resources_ppg-Emerge
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: Emerge_ui_deployer
   type: com.sap.application.content
   path: .
   requires:
@@ -45,6 +70,20 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
+- name: ppg-Emerge-launchpad
+  type: com.sap.application.content
+  path: launchpad
+  requires:
+  - name: portal_resources_ppg-Emerge
+    parameters:
+      content-target: true
+      service-key:
+        config:
+          content-endpoint: developer
+        name: content-deploy-key
+  - name: uaa_Emerge
+  - name: Emerge-repo-host
+  - name: Emerge_ui_deployer
 resources:
 - name: Emerge-db
   type: com.sap.xs.hdi-container
@@ -77,6 +116,23 @@ resources:
     service: destination
     service-name: Emerge-dest-srv
     service-plan: lite
+- name: portal_resources_ppg-Emerge
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: portal
+    service-plan: standard
+- name: Emerge_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: uaa_Emerge
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: Emerge-xsuaa-service
+    service-plan: application
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
