@@ -7,7 +7,7 @@ using {
 namespace ppg.Emerge;
 
 entity ProductSurvey : cuid, managed {
-
+    AccountId         : String;
     Customer          : String;
     RepresentName     : String;
     RepresentTitle    : String;
