@@ -1,6 +1,6 @@
 using ppg.Emerge from '../db/data-model';
 
- service EmergeService
+ service EmergeService @( requires: ['Emerge_KBU'])
 {
     @Capabilities: { 
         InsertRestrictions.Insertable: true,

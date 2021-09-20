@@ -6,6 +6,10 @@
     {
       "name": "uaa.user",
       "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.Emerge_KBU",
+      "description": "Emerge: Key Business User"
     }
   ],
   "role-templates": [
@@ -15,6 +19,14 @@
       "scope-references": [
         "uaa.user"
       ]
+    },
+    {
+      "name": "Emerge_KBU",
+      "description": "Emerge: Key Business User",
+      "scope-references": [
+        "$XSAPPNAME.Emerge_KBU"
+      ],
+      "attribute-references": []
     }
   ]
 }
