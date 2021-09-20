@@ -160,6 +160,9 @@
             "considerAnalyticalParameters": true,
             "showDraftToggle": false,
             "inboundParameters": { 
+                "AccountId": {     
+                    "useForCreate": true   
+                },  
                 "Customer": {     
                     "useForCreate": true   
                 },  
