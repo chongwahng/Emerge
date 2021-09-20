@@ -112,6 +112,11 @@ resources:
             Type: HTTP
             URL: https://ui5.sap.com
           - Authentication: BasicAuthentication
+            Name: AC
+            ProxyType: Internet
+            Type: HTTP
+            forwardAuthToken: true  
+          - Authentication: BasicAuthentication
             Name: SCM
             ProxyType: Internet
             Type: HTTP
