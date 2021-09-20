@@ -138,6 +138,14 @@ resources:
     service: xsuaa
     service-name: Emerge-xsuaa-service
     service-plan: application
+    config:
+       xsappname: ppg-emerge-${space}    
+       tenant-mode: dedicated
+       role-collections:
+         - name: 'Emerge-KBU-${space}'
+           description: Emerge - Key Business User
+           role-template-references:
+             - $XSAPPNAME.Emerge_KBU
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
