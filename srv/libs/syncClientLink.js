@@ -4,7 +4,7 @@ module.exports = async function(req) {
 
         const getTask = await executeHttpRequest(
                 { 
-                    destinationName: 'SCM'
+                    destinationName: req.System
                 },
                 {
                     method: 'get',
@@ -20,13 +20,13 @@ module.exports = async function(req) {
             
         const sendIdToClientLink = await executeHttpRequest(
             { 
-                    destinationName: 'SCM'
+                    destinationName: req.System
             },
             {
                 method: 'patch',
                 url: `/sap/c4c/odata/v1/c4codataapi/CorporateAccountCollection('${ObjectId}')`,
                 data: {
-                    'Z_CallPlannerID_KUT': req.ID
+                    'Z_EmergeID_KUT': req.ID
             },
             headers: {
                 'content-type': 'application/json'
