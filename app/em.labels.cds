@@ -6,7 +6,6 @@ using {ppg.Emerge as dm} from '../db/data-model';
 
 annotate dm.ProductSurvey with @title         : '{i18n>ProductSurvey}' {
     ID                @UI.Hidden;
-    AccountId         @UI.Hidden;
     System            @UI.Hidden;
     Customer          @title                  : '{i18n>Customer}';
     RepresentName     @title                  : '{i18n>RepresentName}';

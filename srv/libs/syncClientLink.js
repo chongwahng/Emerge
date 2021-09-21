@@ -8,9 +8,9 @@ module.exports = async function(req) {
                 },
                 {
                     method: 'get',
-                    url: `/sap/c4c/odata/v1/c4codataapi/CorporateAccountCollection`,
+                    url: '/sap/c4c/odata/v1/c4codataapi/CorporateAccountCollection',
                     params: {
-                        "$filter": `AccountID eq '${req.AccountId}'`
+                        "$filter": `AccountID eq '${req.Customer}'`
                 }
             }
         )

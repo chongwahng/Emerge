@@ -131,6 +131,14 @@ annotate em.ProductSurvey with @UI : {
     FieldGroup #ObjectInformationFG   : {
         $Type : 'UI.FieldGroupType',
         Data  : [
+            // {
+            //     $Type : 'UI.DataField',
+            //     Value : AccountId
+            // },
+            // {
+            //     $Type : 'UI.DataField',
+            //     Value : System
+            // },
             {
                 $Type : 'UI.DataField',
                 Value : Airframer_Id

@@ -159,10 +159,7 @@
             "objectPageHeaderType": "Dynamic",
             "considerAnalyticalParameters": true,
             "showDraftToggle": false,
-            "inboundParameters": { 
-                "AccountId": {     
-                    "useForCreate": true   
-                },  
+            "inboundParameters": {  
                 "System": {     
                     "useForCreate": true   
                 }, 
