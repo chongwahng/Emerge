@@ -26,7 +26,7 @@ entity ProductType : sap.common.CodeList {
     key Id : String;
 }
 
-entity AirframerHierarchy {
+entity AirframerHierarchy : managed {
     key Id       : String;
         Name     : String;
         Type     : String enum {

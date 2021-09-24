@@ -53,3 +53,12 @@ annotate dm.ComponentList with {
     Name   @title : '{i18n>ComponentName}';
     Parent @UI.Hidden;
 };
+
+annotate dm.AirframerHierarchy with {
+    Id     @title : '{i18n>HierarchyId}';
+    Name   @title : '{i18n>HierarchyName}';
+    Type   @title : '{i18n>HierarchyType}';
+    Parent @title : '{i18n>HierarchyParent}';
+        //    @Common.Text            : Parent_Id.Name
+        //    @Common.TextArrangement : #TextFirst;
+};
