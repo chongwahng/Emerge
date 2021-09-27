@@ -4,7 +4,7 @@ service AirframerService {
         @Capabilities: { 
         InsertRestrictions.Insertable: true,
         UpdateRestrictions.Updatable:  true,
-        DeleteRestrictions.Deletable:  false  
+        DeleteRestrictions.Deletable:  true  
     }
-    entity AirframerHierarchy as projection on Emerge.AirframerHierarchy;
+    entity AirframerHierarchycds as projection on Emerge.AirframerHierarchy;
 }
