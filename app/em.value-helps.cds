@@ -54,26 +54,3 @@ annotate dm.ProductSurvey {
 
 
 }
-
-annotate dm.AirframerHierarchy {
-    // Parent @Common.ValueList: {
-    //     CollectionPath : 'ParentList',
-    //     Parameters : [
-    //         {   $Type: 'Common.ValueListParameterInOut',       
-    //             LocalDataProperty: Parent_Id, 
-    //             ValueListProperty: 'Id'},  
-    //         {   $Type: 'Common.ValueListParameterDisplayOnly', 
-    //             ValueListProperty: 'Name'},
-    //         ],
-    //     SearchSupported : true
-    // };
-    // Type @Common.ValueList: {
-    //     CollectionPath: 'TypeList',
-    //     Parameters : [
-    //         {   $Type: 'Common.ValueListParameterDisplayOnly', 
-    //             ValueListProperty: 'Name'
-    //         }
-    //     ],
-    //     SearchSupported : true
-    // };
-};
