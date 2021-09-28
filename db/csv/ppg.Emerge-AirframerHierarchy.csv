@@ -1,7 +1,0 @@
-Id,Name,Type,Parent_Id
-100,Air1,Airframer,
-100100,Pro1,Program,100
-100100100,Comp1,Component,100100
-200,Air2,Airframer,
-200100,Pro2,Program,200
-200100100,Comp2,Component,200100

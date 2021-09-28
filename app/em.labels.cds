@@ -36,29 +36,23 @@ annotate dm.ProductType with {
     name @title : '{i18n>TypeName}';
 }
 
-annotate dm.AirframerList with {
-    Id     @title : '{i18n>AirframerId}';
-    Name   @title : '{i18n>AirframerName}';
-    Parent @UI.Hidden;
+annotate dm.Airframer with {
+    AirframerId @title : '{i18n>AirframerId}';
+    Name        @title : '{i18n>AirframerName}';
 };
 
-annotate dm.ProgramList with {
-    Id     @title : '{i18n>ProgramId}';
-    Name   @title : '{i18n>ProgramName}';
-    Parent @UI.Hidden;
+annotate dm.Program with {
+    ProgramId @title                  : '{i18n>ProgramId}';
+    Name      @title                  : '{i18n>ProgramName}';
+    Airframer @title                  : '{i18n>Airframer}'
+              @Common.Text            : Airframer.Name
+              @Common.TextArrangement : #TextFirst;
 };
 
-annotate dm.ComponentList with {
-    Id     @title : '{i18n>ComponentId}';
-    Name   @title : '{i18n>ComponentName}';
-    Parent @UI.Hidden;
-};
-
-annotate dm.AirframerHierarchy with {
-    Id     @title : '{i18n>HierarchyId}';
-    Name   @title : '{i18n>HierarchyName}';
-    Type   @title : '{i18n>HierarchyType}';
-    Parent @title : '{i18n>HierarchyParent}'
-           @Common.Text            : Parent.Name
-           @Common.TextArrangement : #TextFirst;
+annotate dm.Component with {
+    ComponentId @title                  : '{i18n>ComponentId}';
+    Name        @title                  : '{i18n>ComponentName}';
+    Program     @title                  : '{i18n>Program}'
+                @Common.Text            : Program.Name
+                @Common.TextArrangement : #TextFirst;
 };
