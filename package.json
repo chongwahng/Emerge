@@ -6,8 +6,8 @@
     "license": "UNLICENSED",
     "private": true,
     "dependencies": {
-        "@sap/cds": "5.3.2",
         "@sap-cloud-sdk/core": "1.47.1",
+        "@sap/cds": "5.3.2",
         "@sap/cds-dk": "4",
         "@sap/cds-odata-v2-adapter-proxy": "1.7.6",
         "@sap/xsenv": "3.1.1",
@@ -17,7 +17,9 @@
         "passport": "^0.4.1"
     },
     "devDependencies": {
-        "@sap/hdi-deploy": "^4.2.0"
+        "@sap/hdi-deploy": "^4.2.0",
+        "cors-anywhere": "^0.4.3",
+        "sqlite3": "^5.0.2"
     },
     "scripts": {
         "start": "cds run",

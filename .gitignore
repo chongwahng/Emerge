@@ -6,6 +6,10 @@ default-*.json
 gen/
 node_modules/
 target/
+resources/
+**dist/
+.env*
+.cdsrc.json
 
 # Web IDE, App Studio
 .che/

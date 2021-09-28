@@ -36,20 +36,17 @@ annotate dm.ProductType with {
     name @title : '{i18n>TypeName}';
 }
 
-annotate dm.AirframerList with {
-    Id     @title : '{i18n>AirframerId}';
-    Name   @title : '{i18n>AirframerName}';
-    Parent @UI.Hidden;
+annotate dm.Airframer with {
+    AirframerId @title : '{i18n>AirframerId}';
+    Name        @title : '{i18n>AirframerName}';
 };
 
-annotate dm.ProgramList with {
-    Id     @title : '{i18n>ProgramId}';
-    Name   @title : '{i18n>ProgramName}';
-    Parent @UI.Hidden;
+annotate dm.Program with {
+    ProgramId @title                  : '{i18n>ProgramId}';
+    Name      @title                  : '{i18n>ProgramName}';
 };
 
-annotate dm.ComponentList with {
-    Id     @title : '{i18n>ComponentId}';
-    Name   @title : '{i18n>ComponentName}';
-    Parent @UI.Hidden;
+annotate dm.Component with {
+    ComponentId @title                  : '{i18n>ComponentId}';
+    Name        @title                  : '{i18n>ComponentName}';
 };
