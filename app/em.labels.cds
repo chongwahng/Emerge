@@ -44,15 +44,9 @@ annotate dm.Airframer with {
 annotate dm.Program with {
     ProgramId @title                  : '{i18n>ProgramId}';
     Name      @title                  : '{i18n>ProgramName}';
-    Airframer @title                  : '{i18n>Airframer}'
-              @Common.Text            : Airframer.Name
-              @Common.TextArrangement : #TextFirst;
 };
 
 annotate dm.Component with {
     ComponentId @title                  : '{i18n>ComponentId}';
     Name        @title                  : '{i18n>ComponentName}';
-    Program     @title                  : '{i18n>Program}'
-                @Common.Text            : Program.Name
-                @Common.TextArrangement : #TextFirst;
 };
