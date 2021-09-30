@@ -17,6 +17,12 @@
             "target": "/ppgemergeui/$1",
             "service": "html5-apps-repo-rt",
             "authenticationType": "xsuaa"
+        },
+        {
+            "source": "^(.*)$",
+            "target": "/ppgemergeuiairframer/$1",
+            "service": "html5-apps-repo-rt",
+            "authenticationType": "xsuaa"
         }
     ]
 }

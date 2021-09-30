@@ -60,6 +60,10 @@ modules:
       - ppgemergeui.zip
       name: ppgemergeui
       target-path: resources/
+    - artifacts:
+      - ppgemergeuiairframer.zip
+      name: ppgemergeuiairframer
+      target-path: resources/
 - name: ppgemergeui
   type: html5
   path: app/ui
@@ -84,6 +88,16 @@ modules:
   - name: uaa_Emerge
   - name: Emerge-repo-host
   - name: Emerge_ui_deployer
+- name: ppgemergeuiairframer
+  type: html5
+  path: app/ui.airframer
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
 resources:
 - name: Emerge-db
   type: com.sap.xs.hdi-container
@@ -102,7 +116,7 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     config:
-      HTML5Runtime_enabled: true
+      HTML5Runtime_enabled: false
       init_data:
         instance:
           destinations:
@@ -111,17 +125,7 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
-          - Authentication: BasicAuthentication
-            Name: AC
-            ProxyType: Internet
-            Type: HTTP
-            forwardAuthToken: true  
-          - Authentication: BasicAuthentication
-            Name: SCM
-            ProxyType: Internet
-            Type: HTTP
-            forwardAuthToken: true  
-          existing_destinations_policy: ignore
+          existing_destinations_policy: update
       version: 1.0.0
     service: destination
     service-name: Emerge-dest-srv
@@ -139,18 +143,18 @@ resources:
 - name: uaa_Emerge
   type: org.cloudfoundry.managed-service
   parameters:
+    config:
+      role-collections:
+      - description: Emerge - Key Business User
+        name: Emerge-KBU-${space}
+        role-template-references:
+        - $XSAPPNAME.Emerge_KBU
+      tenant-mode: dedicated
+      xsappname: ppg-emerge-${space}
     path: ./xs-security.json
     service: xsuaa
     service-name: Emerge-xsuaa-service
     service-plan: application
-    config:
-       xsappname: ppg-emerge-${space}    
-       tenant-mode: dedicated
-       role-collections:
-         - name: 'Emerge-KBU-${space}'
-           description: Emerge - Key Business User
-           role-template-references:
-             - $XSAPPNAME.Emerge_KBU
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
