@@ -42,11 +42,11 @@ annotate dm.Airframer with {
 };
 
 annotate dm.Program with {
-    ProgramId @title                  : '{i18n>ProgramId}';
-    Name      @title                  : '{i18n>ProgramName}';
+    ProgramId @title : '{i18n>ProgramId}';
+    Name      @title : '{i18n>ProgramName}';
 };
 
 annotate dm.Component with {
-    ComponentId @title                  : '{i18n>ComponentId}';
-    Name        @title                  : '{i18n>ComponentName}';
+    ComponentId @title : '{i18n>ComponentId}';
+    Name        @title : '{i18n>ComponentName}';
 };

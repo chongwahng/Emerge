@@ -46,31 +46,3 @@ entity Component : cuid, managed {
     Name        : String;
     Program     : Association to Program;
 }
-
-// entity AirframerHierarchy : managed {
-//     key Id       : String;
-//         Name     : String;
-//         Type     : String enum {
-//             Airframer;
-//             Program;
-//             Component;
-//         };
-//         Parent   : Association to AirframerHierarchy;
-//         Children : Composition of many AirframerHierarchy
-//                        on Children.Parent = $self;
-// }
-//  view AirframerList as select from AirframerHierarchy {
-//     Id,
-//     Name,
-//     Parent
-// } where Type = 'Airframer';
-// view ProgramList as select from AirframerHierarchy {
-//     Id,
-//     Name,
-//     Parent
-// } where Type = 'Program';
-// view ComponentList as select from AirframerHierarchy {
-//     Id,
-//     Name,
-//     Parent
-// } where Type = 'Component';

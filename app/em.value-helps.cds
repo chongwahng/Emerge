@@ -52,5 +52,4 @@ annotate dm.ProductSurvey {
     //     SearchSupported : true,
     // };
 
-
 }

@@ -18,7 +18,6 @@ annotate em.ProductSurvey with {
     BusinessShare     @Search.defaultSearchElement : true;
 }
 
-
 annotate em.ProductSurvey with @UI : {
 
     HeaderInfo                        : {
@@ -76,6 +75,7 @@ annotate em.ProductSurvey with @UI : {
             Value : Component_ID
         },
     ],
+    
     HeaderFacets                      : [{
         $Type  : 'UI.ReferenceFacet',
         Target : '@UI.FieldGroup#ClientLinkCRM',
@@ -204,360 +204,315 @@ annotate em.ProductSurvey with @UI : {
     }
 };
 
-// annotate ah.Airframers with @UI : {
-//     HeaderInfo                        : {
-//         $Type          : 'UI.HeaderInfoType',
-//         TypeName       : '{i18n>Airframer}',
-//         TypeNamePlural : '{i18n>Airframer}',
-//         Title          : {Value : Name},
-//         Description    : {Value : Type}
-//     },
-//     PresentationVariant               : {
-//         Text           : 'Default',
-//         Visualizations : ['@UI.LineItem'],
-//         SortOrder      : [{
-//             $Type      : 'Common.SortOrderType',
-//             Property   : Id,
-//             Descending : true
-//         }]
-//     },
-//     SelectionFields                   : [
-//         Name,
-//         Type,
-//         createdAt,
-//         createdBy
-//     ],
-//     LineItem                          : [
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Id
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Name
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Type
-//         }
-//     ],
-//     Facets                            : [
-//         {
-//             $Type  : 'UI.CollectionFacet',
-//             ID     : 'ObjectInformation',
-//             Label  : '{i18n>ObjectInformation}',
-//             Facets : [{
-//                 $Type  : 'UI.ReferenceFacet',
-//                 Target : '@UI.FieldGroup#ObjectInformationFG'
-//             }, ]
-//         },
-//         {
-//             $Type  : 'UI.CollectionFacet',
-//             ID     : 'AdminData',
-//             Label  : '{i18n>AdminData}',
-//             Facets : [
-//                 {
-//                     $Type  : 'UI.ReferenceFacet',
-//                     Target : '@UI.FieldGroup#CreationDetailsFG',
-//                     Label  : '{i18n>CreationDetails}'
-//                 },
-//                 {
-//                     $Type  : 'UI.ReferenceFacet',
-//                     Target : '@UI.FieldGroup#ModificationDetailsFG',
-//                     Label  : '{i18n>ModificationDetails}'
-//                 },
-//             ]
-//         },
-//         {
-//             $Type  : 'UI.ReferenceFacet',
-//             Target : 'Children/@UI.LineItem',
-//             Label  : '{i18n>Program}'
-//         }
-//     ],
-//     FieldGroup #ObjectInformationFG   : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Id
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Name
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Type
-//             }
-//         ]
-//     },
-//     FieldGroup #CreationDetailsFG     : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : createdAt
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : createdBy
-//             }
-//         ]
-//     },
-//     FieldGroup #ModificationDetailsFG : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : modifiedAt
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : modifiedBy
-//             }
-//         ]
-//     }
-// };
 
-// annotate ah.Programs with @UI : {
-//     HeaderInfo                        : {
-//         $Type          : 'UI.HeaderInfoType',
-//         TypeName       : '{i18n>Program}',
-//         TypeNamePlural : '{i18n>Program}',
-//         Title          : {Value : Name},
-//         Description    : {Value : Type}
-//     },
-//     PresentationVariant               : {
-//         Text           : 'Default',
-//         Visualizations : ['@UI.LineItem'],
-//         SortOrder      : [{
-//             $Type      : 'Common.SortOrderType',
-//             Property   : Id,
-//             Descending : true
-//         }]
-//     },
-//     SelectionFields                   : [
-//         Name,
-//         Type,
-//         Parent_Id,
-//         createdAt,
-//         createdBy
-//     ],
-//     LineItem                          : [
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Id
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Name
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Type
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Parent_Id
-//         }
-//     ],
-//     Facets                            : [
-//         {
-//             $Type  : 'UI.CollectionFacet',
-//             ID     : 'ObjectInformation',
-//             Label  : '{i18n>ObjectInformation}',
-//             Facets : [{
-//                 $Type  : 'UI.ReferenceFacet',
-//                 Target : '@UI.FieldGroup#ObjectInformationFG'
-//             }, ]
-//         },
-//         {
-//             $Type  : 'UI.CollectionFacet',
-//             ID     : 'AdminData',
-//             Label  : '{i18n>AdminData}',
-//             Facets : [
-//                 {
-//                     $Type  : 'UI.ReferenceFacet',
-//                     Target : '@UI.FieldGroup#CreationDetailsFG',
-//                     Label  : '{i18n>CreationDetails}'
-//                 },
-//                 {
-//                     $Type  : 'UI.ReferenceFacet',
-//                     Target : '@UI.FieldGroup#ModificationDetailsFG',
-//                     Label  : '{i18n>ModificationDetails}'
-//                 },
-//             ]
-//         },
-//         {
-//             $Type  : 'UI.ReferenceFacet',
-//             Target : 'Children/@UI.LineItem',
-//             Label  : '{i18n>Component}'
-//         }
-//     ],
-//     FieldGroup #ObjectInformationFG   : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Id
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Name
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Type
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Parent_Id
-//             }
-//         ]
-//     },
-//     FieldGroup #CreationDetailsFG     : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : createdAt
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : createdBy
-//             }
-//         ]
-//     },
-//     FieldGroup #ModificationDetailsFG : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : modifiedAt
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : modifiedBy
-//             }
-//         ]
-//     }
-// };
+annotate ah.Airframer with @UI : {
+    HeaderInfo                        : {
+        $Type          : 'UI.HeaderInfoType',
+        TypeName       : '{i18n>Airframer}',
+        TypeNamePlural : '{i18n>Airframers}',
+        Title          : {Value : Name}
+    },
+    PresentationVariant               : {
+        Text           : 'Default',
+        Visualizations : ['@UI.LineItem'],
+        SortOrder      : [{
+            $Type      : 'Common.SortOrderType',
+            Property   : AirframerId,
+            Descending : true
+        }]
+    },
+    SelectionFields                   : [
+        Name,
+        createdAt,
+        createdBy
+    ],
+    LineItem                          : [
+        {
+            $Type : 'UI.DataField',
+            Value : AirframerId
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Name
+        }
+    ],
+    Facets                            : [
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'ObjectInformation',
+            Label  : '{i18n>ObjectInformation}',
+            Facets : [{
+                $Type  : 'UI.ReferenceFacet',
+                Target : '@UI.FieldGroup#ObjectInformationFG'
+            }, ]
+        },
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'AdminData',
+            Label  : '{i18n>AdminData}',
+            Facets : [
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#CreationDetailsFG',
+                    Label  : '{i18n>CreationDetails}'
+                },
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#ModificationDetailsFG',
+                    Label  : '{i18n>ModificationDetails}'
+                },
+            ]
+        },
+        {
+            $Type  : 'UI.ReferenceFacet',
+            Target : 'to_Programs/@UI.LineItem',
+            Label  : '{i18n>Programs}'
+        }
+    ],
+    FieldGroup #ObjectInformationFG   : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : AirframerId
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Name
+            }
+        ]
+    },
+    FieldGroup #CreationDetailsFG     : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : createdAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdBy
+            }
+        ]
+    },
+    FieldGroup #ModificationDetailsFG : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy
+            }
+        ]
+    }
+};
 
-// annotate ah.Components with @UI : {
-//     HeaderInfo                        : {
-//         $Type          : 'UI.HeaderInfoType',
-//         TypeName       : '{i18n>Component}',
-//         TypeNamePlural : '{i18n>Component}',
-//         Title          : {Value : Name},
-//         Description    : {Value : Type}
-//     },
-//     PresentationVariant               : {
-//         Text           : 'Default',
-//         Visualizations : ['@UI.LineItem'],
-//         SortOrder      : [{
-//             $Type      : 'Common.SortOrderType',
-//             Property   : Id,
-//             Descending : true
-//         }]
-//     },
-//     SelectionFields                   : [
-//         Name,
-//         Type,
-//         Parent_Id,
-//         createdAt,
-//         createdBy
-//     ],
-//     LineItem                          : [
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Id
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Name
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Type
-//         },
-//         {
-//             $Type : 'UI.DataField',
-//             Value : Parent_Id
-//         }
-//     ],
-//     Facets                            : [
-//         {
-//             $Type  : 'UI.CollectionFacet',
-//             ID     : 'ObjectInformation',
-//             Label  : '{i18n>ObjectInformation}',
-//             Facets : [{
-//                 $Type  : 'UI.ReferenceFacet',
-//                 Target : '@UI.FieldGroup#ObjectInformationFG'
-//             }, ]
-//         },
-//         {
-//             $Type  : 'UI.CollectionFacet',
-//             ID     : 'AdminData',
-//             Label  : '{i18n>AdminData}',
-//             Facets : [
-//                 {
-//                     $Type  : 'UI.ReferenceFacet',
-//                     Target : '@UI.FieldGroup#CreationDetailsFG',
-//                     Label  : '{i18n>CreationDetails}'
-//                 },
-//                 {
-//                     $Type  : 'UI.ReferenceFacet',
-//                     Target : '@UI.FieldGroup#ModificationDetailsFG',
-//                     Label  : '{i18n>ModificationDetails}'
-//                 },
-//             ]
-//         }
-//     ],
-//     FieldGroup #ObjectInformationFG   : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Id
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Name
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Type
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : Parent_Id
-//             }
-//         ]
-//     },
-//     FieldGroup #CreationDetailsFG     : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : createdAt
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : createdBy
-//             }
-//         ]
-//     },
-//     FieldGroup #ModificationDetailsFG : {
-//         $Type : 'UI.FieldGroupType',
-//         Data  : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : modifiedAt
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Value : modifiedBy
-//             }
-//         ]
-//     }
-// };
+annotate ah.Program with @UI : {
+    HeaderInfo                        : {
+        $Type          : 'UI.HeaderInfoType',
+        TypeName       : '{i18n>Program}',
+        TypeNamePlural : '{i18n>Programs}',
+        Title          : {Value : Name}
+    },
+    PresentationVariant               : {
+        Text           : 'Default',
+        Visualizations : ['@UI.LineItem'],
+        SortOrder      : [{
+            $Type      : 'Common.SortOrderType',
+            Property   : ProgramId,
+            Descending : true
+        }]
+    },
+    SelectionFields                   : [
+        Name,
+        Airframer_ID,
+        createdAt,
+        createdBy
+    ],
+    LineItem                          : [
+        {
+            $Type : 'UI.DataField',
+            Value : ProgramId
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Name
+        }
+    ],
+    Facets                            : [
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'ObjectInformation',
+            Label  : '{i18n>ObjectInformation}',
+            Facets : [{
+                $Type  : 'UI.ReferenceFacet',
+                Target : '@UI.FieldGroup#ObjectInformationFG'
+            }, ]
+        },
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'AdminData',
+            Label  : '{i18n>AdminData}',
+            Facets : [
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#CreationDetailsFG',
+                    Label  : '{i18n>CreationDetails}'
+                },
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#ModificationDetailsFG',
+                    Label  : '{i18n>ModificationDetails}'
+                },
+            ]
+        },
+        {
+            $Type  : 'UI.ReferenceFacet',
+            Target : 'to_Components/@UI.LineItem',
+            Label  : '{i18n>Components}'
+        }
+    ],
+    FieldGroup #ObjectInformationFG   : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : ProgramId
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Name
+            }
+        ]
+    },
+    FieldGroup #CreationDetailsFG     : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : createdAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdBy
+            }
+        ]
+    },
+    FieldGroup #ModificationDetailsFG : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy
+            }
+        ]
+    }
+};
+
+annotate ah.Component with @UI : {
+    HeaderInfo                        : {
+        $Type          : 'UI.HeaderInfoType',
+        TypeName       : '{i18n>Component}',
+        TypeNamePlural : '{i18n>Components}',
+        Title          : {Value : Name}
+    },
+    PresentationVariant               : {
+        Text           : 'Default',
+        Visualizations : ['@UI.LineItem'],
+        SortOrder      : [{
+            $Type      : 'Common.SortOrderType',
+            Property   : ComponentId,
+            Descending : true
+        }]
+    },
+    SelectionFields                   : [
+        Name,
+        Program_ID,
+        createdAt,
+        createdBy
+    ],
+    LineItem                          : [
+        {
+            $Type : 'UI.DataField',
+            Value : ComponentId
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Name
+        }
+    ],
+    Facets                            : [
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'ObjectInformation',
+            Label  : '{i18n>ObjectInformation}',
+            Facets : [{
+                $Type  : 'UI.ReferenceFacet',
+                Target : '@UI.FieldGroup#ObjectInformationFG'
+            }, ]
+        },
+        {
+            $Type  : 'UI.CollectionFacet',
+            ID     : 'AdminData',
+            Label  : '{i18n>AdminData}',
+            Facets : [
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#CreationDetailsFG',
+                    Label  : '{i18n>CreationDetails}'
+                },
+                {
+                    $Type  : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#ModificationDetailsFG',
+                    Label  : '{i18n>ModificationDetails}'
+                },
+            ]
+        }
+    ],
+    FieldGroup #ObjectInformationFG   : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : ComponentId
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Name
+            }
+        ]
+    },
+    FieldGroup #CreationDetailsFG     : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : createdAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdBy
+            }
+        ]
+    },
+    FieldGroup #ModificationDetailsFG : {
+        $Type : 'UI.FieldGroupType',
+        Data  : [
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy
+            }
+        ]
+    }
+};
