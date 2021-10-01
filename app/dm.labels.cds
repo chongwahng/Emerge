@@ -37,16 +37,16 @@ annotate dm.ProductType with {
 }
 
 annotate dm.Airframer with {
-    AirframerId @title : '{i18n>AirframerId}';
-    Name        @title : '{i18n>AirframerName}';
+    Id   @title : '{i18n>AirframerId}';
+    Name @title : '{i18n>AirframerName}';
 };
 
 annotate dm.Program with {
-    ProgramId @title : '{i18n>ProgramId}';
-    Name      @title : '{i18n>ProgramName}';
+    Id   @title : '{i18n>ProgramId}';
+    Name @title : '{i18n>ProgramName}';
 };
 
 annotate dm.Component with {
-    ComponentId @title : '{i18n>ComponentId}';
-    Name        @title : '{i18n>ComponentName}';
+    Id   @title : '{i18n>ComponentId}';
+    Name @title : '{i18n>ComponentName}';
 };

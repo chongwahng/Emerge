@@ -26,23 +26,23 @@ entity ProductType : sap.common.CodeList {
     key Id : String;
 }
 
-entity Airframer : cuid, managed {
-    AirframerId : String;
-    Name        : String;
-    to_Programs : Composition of many Program
-                      on to_Programs.Airframer = $self;
+entity Airframer : managed {
+    key Id          : String;
+        Name        : String;
+        to_Programs : Composition of many Program
+                          on to_Programs.to_Airframer = $self;
 }
 
-entity Program : cuid, managed {
-    ProgramId     : String;
-    Name          : String;
-    Airframer     : Association to Airframer;
-    to_Components : Composition of many Component
-                        on to_Components.Program = $self;
+entity Program : managed {
+    key Id            : String;
+        Name          : String;
+        to_Airframer  : Association to Airframer;
+        to_Components : Composition of many Component
+                            on to_Components.to_Program = $self;
 }
 
-entity Component : cuid, managed {
-    ComponentId : String;
-    Name        : String;
-    Program     : Association to Program;
+entity Component : managed {
+    key Id         : String;
+        Name       : String;
+        to_Program : Association to Program;
 }
