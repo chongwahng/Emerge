@@ -1,6 +1,7 @@
 using ppg.Emerge from '../db/data-model';
 
-service AirframerService {
+service AirframerService @( requires : ['Emerge_KBU']) // need to add Admin role
+{
     @Capabilities : {
         InsertRestrictions.Insertable : true,
         UpdateRestrictions.Updatable  : true,
