@@ -57,23 +57,13 @@ modules:
     build-result: resources
     requires:
     - artifacts:
-      - ppgemergeui.zip
-      name: ppgemergeui
+      - ppgemergeuiv4.zip
+      name: ppgemergeuiv4
       target-path: resources/
     - artifacts:
-      - ppgemergeuiairframer.zip
-      name: ppgemergeuiairframer
+      - ppgemergeuiv4airframer.zip
+      name: ppgemergeuiv4airframer
       target-path: resources/
-- name: ppgemergeui
-  type: html5
-  path: app/ui
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
 - name: ppg-Emerge-launchpad
   type: com.sap.application.content
   path: launchpad
@@ -88,9 +78,19 @@ modules:
   - name: uaa_Emerge
   - name: Emerge-repo-host
   - name: Emerge_ui_deployer
-- name: ppgemergeuiairframer
+- name: ppgemergeuiv4
   type: html5
-  path: app/ui.airframer
+  path: app/ui.v4
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: ppgemergeuiv4airframer
+  type: html5
+  path: app/ui.v4.airframer
   build-parameters:
     build-result: dist
     builder: custom

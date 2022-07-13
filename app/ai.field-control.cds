@@ -5,16 +5,16 @@ using AirframerService as ai from '../srv/AirframerService';
 //
 
 annotate ai.Airframer {
-    Id   @mandatory;
+    code @mandatory;
     Name @mandatory;
 }
 
 annotate ai.Program {
-    Id   @mandatory;
+    code @mandatory;
     Name @mandatory;
 }
 
 annotate ai.Component {
-    Id   @mandatory;
+    code @mandatory;
     Name @mandatory;
 }

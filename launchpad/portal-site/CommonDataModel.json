@@ -27,12 +27,12 @@
 			},
 			"payload": {
 				"viz": [{
-					"id": "ppg.emerge.ui-0-1631699539905",
-					"appId": "ppg.emerge.ui",
+					"id": "ppg.emerge.ui.v4-0-1648449602794",
+					"appId": "ppg.emerge.ui.v4",
 					"vizId": "ProductSurvey-manage"
 				}, {
-					"id": "ppg.emerge.ui-1-1631717036837",
-					"appId": "ppg.emerge.ui",
+					"id": "ppg.emerge.ui.v4-1-1648449602794",
+					"appId": "ppg.emerge.ui.v4",
 					"vizId": "ProductSurvey-create"
 				}]
 			}
@@ -46,8 +46,8 @@
 			},
 			"payload": {
 				"viz": [{
-					"id": "ppg.emerge.ui.airframer-0-1633001404072",
-					"appId": "ppg.emerge.ui.airframer",
+					"id": "ppg.emerge.ui.v4.airframer-0-1648450284930",
+					"appId": "ppg.emerge.ui.v4.airframer",
 					"vizId": "Airframer-manage"
 				}]
 			}

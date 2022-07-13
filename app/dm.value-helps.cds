@@ -5,30 +5,39 @@ using {ppg.Emerge as dm} from '../db/data-model';
 //
 
 annotate dm.ProductSurvey {
-
-    Airframer @Common.ValueList : {
+    ProductType @Common.ValueListWithFixedValues;
+    
+    Airframer   @Common.ValueList : {
         CollectionPath  : 'Airframer',
         Parameters      : [
             {
                 $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : Airframer_Id,
-                ValueListProperty : 'Id'
+                LocalDataProperty : Airframer_ID,
+                ValueListProperty : 'ID'
+            },
+            {
+                $Type             : 'Common.ValueListParameterDisplayOnly',
+                ValueListProperty : 'code'
             },
             {
                 $Type             : 'Common.ValueListParameterDisplayOnly',
                 ValueListProperty : 'Name'
-            },
+            }
         ],
         SearchSupported : true
-    };
+    }; 
 
-    Program   @Common.ValueList : {
+    Program     @Common.ValueList : {
         CollectionPath  : 'Program',
         Parameters      : [
             {
                 $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : Program_Id,
-                ValueListProperty : 'Id'
+                LocalDataProperty : Program_ID,
+                ValueListProperty : 'ID'
+            },
+            {
+                $Type             : 'Common.ValueListParameterDisplayOnly',
+                ValueListProperty : 'code'
             },
             {
                 $Type             : 'Common.ValueListParameterDisplayOnly',
@@ -36,20 +45,24 @@ annotate dm.ProductSurvey {
             },
             {
                 $Type             : 'Common.ValueListParameterIn',
-                LocalDataProperty : Airframer_Id,
-                ValueListProperty : 'to_Airframer_Id',
-            },
+                LocalDataProperty : Airframer_ID,
+                ValueListProperty : 'to_Airframer_ID',
+            }
         ],
-        SearchSupported : true,
+        SearchSupported : true
     };
 
-    Component @Common.ValueList : {
+    Component   @Common.ValueList : {
         CollectionPath  : 'Component',
         Parameters      : [
             {
                 $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : Component_Id,
-                ValueListProperty : 'Id'
+                LocalDataProperty : Component_ID,
+                ValueListProperty : 'ID'
+            },
+            {
+                $Type             : 'Common.ValueListParameterDisplayOnly',
+                ValueListProperty : 'code'
             },
             {
                 $Type             : 'Common.ValueListParameterDisplayOnly',
@@ -57,11 +70,10 @@ annotate dm.ProductSurvey {
             },
             {
                 $Type             : 'Common.ValueListParameterIn',
-                LocalDataProperty : Program_Id,
-                ValueListProperty : 'to_Program_Id',
-            },
+                LocalDataProperty : Program_ID,
+                ValueListProperty : 'to_Program_ID',
+            }
         ],
-        SearchSupported : true,
+        SearchSupported : true
     };
-
-}
+} 

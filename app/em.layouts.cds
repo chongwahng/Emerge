@@ -18,7 +18,8 @@ annotate em.ProductSurvey with {
 }
 
 annotate em.ProductSurvey with @UI : {
-
+    //CreateHidden : true,   //-- not required for sprint 1
+    
     HeaderInfo                        : {
         $Type          : 'UI.HeaderInfoType',
         TypeName       : '{i18n>ProductSurvey}',
@@ -40,9 +41,9 @@ annotate em.ProductSurvey with @UI : {
 
     SelectionFields                   : [
         Customer,
-        Airframer_Id,
-        Program_Id,
-        Component_Id,
+        Airframer_ID,
+        Program_ID,
+        Component_ID,
         ProductType_Id,
         createdAt,
         createdBy
@@ -63,15 +64,15 @@ annotate em.ProductSurvey with @UI : {
         },
         {
             $Type : 'UI.DataField',
-            Value : Airframer_Id,
+            Value : Airframer_ID,
         },
         {
             $Type : 'UI.DataField',
-            Value : Program_Id
+            Value : Program_ID
         },
         {
             $Type : 'UI.DataField',
-            Value : Component_Id
+            Value : Component_ID
         },
     ],
     
@@ -141,15 +142,15 @@ annotate em.ProductSurvey with @UI : {
             // },
             {
                 $Type : 'UI.DataField',
-                Value : Airframer_Id
+                Value : Airframer_ID
             },
             {
                 $Type : 'UI.DataField',
-                Value : Program_Id
+                Value : Program_ID
             },
             {
                 $Type : 'UI.DataField',
-                Value : Component_Id
+                Value : Component_ID
             },
             {
                 $Type : 'UI.DataField',

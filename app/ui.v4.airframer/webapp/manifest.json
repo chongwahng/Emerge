@@ -1,0 +1,200 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "ppg.emerge.ui.v4.airframer",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "dataSources": {
+            "mainService": {
+                "uri": "/airframer/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            }
+        },
+        "offline": false,
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "ui5template.fiorielements.v4.lrop",
+            "version": "1.0.0"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "ppg-emerge-ui-v4-airframer-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "Airframer",
+                    "action": "manage",
+                    "title": "{{appTitle}}",
+                    "subTitle": "",
+                    "icon": "sap-icon://list"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "resources": {
+            "js": [],
+            "css": []
+        },
+        "dependencies": {
+            "minUI5Version": "1.99.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.fe.templates": {}
+            }
+        },
+        "models": {
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            }
+        },
+        "routing": {
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "AirframerList",
+                    "target": "AirframerList"
+                },
+                {
+                    "pattern": "Airframer({key}):?query:",
+                    "name": "AirframerObjectPage",
+                    "target": "AirframerObjectPage"
+                },
+                {
+                    "pattern": "Airframer({key})/to_Programs({key2}):?query:",
+                    "name": "ProgramObjectPage",
+                    "target": "ProgramObjectPage"
+                },
+                {
+                    "pattern": "Airframer({key})/to_Programs({key2})/to_Components({key3}):?query:",
+                    "name": "ComponentObjectPage",
+                    "target": "ComponentObjectPage"
+                }
+            ],
+            "targets": {
+                "AirframerList": {
+                    "type": "Component",
+                    "id": "AirframerList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "Airframer",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "Airframer": {
+                                    "detail": {
+                                        "route": "AirframerObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "AirframerObjectPage": {
+                    "type": "Component",
+                    "id": "AirframerObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "Airframer",
+                            "navigation": {
+                                "to_Programs": {
+                                    "detail": {
+                                        "route": "ProgramObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ProgramObjectPage": {
+                    "type": "Component",
+                    "id": "ProgramObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "Program",
+                            "navigation": {
+                                "to_Components": {
+                                    "detail": {
+                                        "route": "ComponentObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ComponentObjectPage": {
+                    "type": "Component",
+                    "id": "ComponentObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings":{
+                            "editableHeaderContent": false,
+                            "entitySet": "Component"
+                        }
+                    }
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    },
+    "sap.platform.abap": {
+        "_version": "1.1.0",
+        "uri": ""
+    },
+    "sap.platform.hcp": {
+        "_version": "1.1.0",
+        "uri": ""
+    },
+    "sap.fiori": {
+        "_version": "1.1.0",
+        "registrationIds": [],
+        "archeType": "transactional"
+    }
+}

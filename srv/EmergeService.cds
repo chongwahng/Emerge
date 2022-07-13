@@ -13,3 +13,5 @@ service EmergeService @( requires: ['Emerge_KBU'])
     entity Program       as projection on Emerge.Program;
     entity Component     as projection on Emerge.Component;
 }
+
+annotate EmergeService.ProductSurvey with @odata.draft.enabled;

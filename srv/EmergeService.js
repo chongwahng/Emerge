@@ -6,10 +6,10 @@ module.exports = function (service) {
 
     this.after('CREATE', ProductSurvey, async (req) => {
         try {
-            const syncClientLinkRequest = await syncClientLink(req);
+//            const syncClientLinkRequest = await syncClientLink(req, request);  sprint 1 - does not require integration to C4C yet
         }
         catch (error) {
-            req.reject({
+            request.reject({
                 message: error.message
             });
         }
