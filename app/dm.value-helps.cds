@@ -4,10 +4,14 @@ using {ppg.Emerge as dm} from '../db/data-model';
 // annotations for value helps
 //
 
-annotate dm.ProductSurvey {
+annotate dm.ProductSurvey_Infos {
     ProductType @Common.ValueListWithFixedValues;
-    
-    Airframer   @Common.ValueList : {
+}
+
+annotate dm.ProductSurvey {
+    //    ProductType @Common.ValueListWithFixedValues;
+
+    Airframer @Common.ValueList : {
         CollectionPath  : 'Airframer',
         Parameters      : [
             {
@@ -17,27 +21,19 @@ annotate dm.ProductSurvey {
             },
             {
                 $Type             : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'code'
-            },
-            {
-                $Type             : 'Common.ValueListParameterDisplayOnly',
                 ValueListProperty : 'Name'
             }
         ],
         SearchSupported : true
-    }; 
+    };
 
-    Program     @Common.ValueList : {
+    Program   @Common.ValueList : {
         CollectionPath  : 'Program',
         Parameters      : [
             {
                 $Type             : 'Common.ValueListParameterInOut',
                 LocalDataProperty : Program_ID,
                 ValueListProperty : 'ID'
-            },
-            {
-                $Type             : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'code'
             },
             {
                 $Type             : 'Common.ValueListParameterDisplayOnly',
@@ -52,7 +48,7 @@ annotate dm.ProductSurvey {
         SearchSupported : true
     };
 
-    Component   @Common.ValueList : {
+    Component @Common.ValueList : {
         CollectionPath  : 'Component',
         Parameters      : [
             {
@@ -62,18 +58,9 @@ annotate dm.ProductSurvey {
             },
             {
                 $Type             : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'code'
-            },
-            {
-                $Type             : 'Common.ValueListParameterDisplayOnly',
                 ValueListProperty : 'Name'
-            },
-            {
-                $Type             : 'Common.ValueListParameterIn',
-                LocalDataProperty : Program_ID,
-                ValueListProperty : 'to_Program_ID',
             }
         ],
         SearchSupported : true
     };
-} 
+}

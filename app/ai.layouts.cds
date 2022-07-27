@@ -5,7 +5,6 @@ using AirframerService as ai from '../srv/AirframerService';
 //
 
 annotate ai.Airframer with {
-    code @Search.defaultSearchElement : true;
     Name @Search.defaultSearchElement : true;
 }
 
@@ -21,7 +20,7 @@ annotate ai.Airframer with @UI : {
         Visualizations : ['@UI.LineItem'],
         SortOrder      : [{
             $Type      : 'Common.SortOrderType',
-            Property   : code,
+            Property   : Name,
             Descending : true
         }]
     },
@@ -31,10 +30,6 @@ annotate ai.Airframer with @UI : {
         createdBy
     ],
     LineItem                          : [
-        {
-            $Type : 'UI.DataField',
-            Value : code
-        },
         {
             $Type : 'UI.DataField',
             Value : Name
@@ -78,10 +73,6 @@ annotate ai.Airframer with @UI : {
         Data  : [
             {
                 $Type : 'UI.DataField',
-                Value : code
-            },
-            {
-                $Type : 'UI.DataField',
                 Value : Name
             }
         ]
@@ -115,7 +106,6 @@ annotate ai.Airframer with @UI : {
 };
 
 annotate ai.Program with {
-    code @Search.defaultSearchElement : true;
     Name @Search.defaultSearchElement : true;
 }
 
@@ -131,7 +121,7 @@ annotate ai.Program with @UI : {
         Visualizations : ['@UI.LineItem'],
         SortOrder      : [{
             $Type      : 'Common.SortOrderType',
-            Property   : code,
+            Property   : Name,
             Descending : true
         }]
     },
@@ -142,10 +132,6 @@ annotate ai.Program with @UI : {
         createdBy
     ],
     LineItem                          : [
-        {
-            $Type : 'UI.DataField',
-            Value : code
-        },
         {
             $Type : 'UI.DataField',
             Value : Name
@@ -177,20 +163,11 @@ annotate ai.Program with @UI : {
                     Label  : '{i18n>ModificationDetails}'
                 },
             ]
-        },
-        {
-            $Type  : 'UI.ReferenceFacet',
-            Target : 'to_Components/@UI.LineItem',
-            Label  : '{i18n>Components}'
         }
     ],
     FieldGroup #ObjectInformationFG   : {
         $Type : 'UI.FieldGroupType',
         Data  : [
-            {
-                $Type : 'UI.DataField',
-                Value : code
-            },
             {
                 $Type : 'UI.DataField',
                 Value : Name
@@ -226,7 +203,6 @@ annotate ai.Program with @UI : {
 };
 
 annotate ai.Component with {
-    code @Search.defaultSearchElement : true;
     Name @Search.defaultSearchElement : true;
 }
 
@@ -242,21 +218,16 @@ annotate ai.Component with @UI : {
         Visualizations : ['@UI.LineItem'],
         SortOrder      : [{
             $Type      : 'Common.SortOrderType',
-            Property   : code,
+            Property   : Name,
             Descending : true
         }]
     },
     SelectionFields                   : [
         Name,
-        to_Program_ID,
         createdAt,
         createdBy
     ],
     LineItem                          : [
-        {
-            $Type : 'UI.DataField',
-            Value : code
-        },
         {
             $Type : 'UI.DataField',
             Value : Name
@@ -293,10 +264,6 @@ annotate ai.Component with @UI : {
     FieldGroup #ObjectInformationFG   : {
         $Type : 'UI.FieldGroupType',
         Data  : [
-            {
-                $Type : 'UI.DataField',
-                Value : code
-            },
             {
                 $Type : 'UI.DataField',
                 Value : Name

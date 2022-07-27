@@ -127,6 +127,11 @@
                     "pattern": "ProductSurvey({key}):?query:",
                     "name": "ProductSurveyObjectPage",
                     "target": "ProductSurveyObjectPage"
+                },
+                {
+                    "pattern": "ProductSurvey({key})/to_Infos({key2}):?query:",
+                    "name": "InfoObjectPage",
+                    "target": "InfoObjectPage"
                 }
             ],
             "targets": {
@@ -155,7 +160,38 @@
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "ProductSurvey"
+                            "entitySet": "ProductSurvey",
+                            "navigation": {
+                                "to_Infos": {
+                                    "detail": {
+                                        "route": "InfoObjectPage"
+                                    }
+                                }
+                            },
+                            "controlConfiguration": {
+                                "to_Infos/@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "type": "GridTable",
+                                        "enableFullScreen": true,
+                                        "creationMode": {
+                                            "name": "Inline",
+                                            "createAtEnd": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "InfoObjectPage": {
+                    "type": "Component",
+                    "id": "InfoObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "ProductSurvey_Infos",
+                            "sectionLayout": "Page"
                         }
                     }
                 }

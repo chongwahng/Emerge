@@ -64,6 +64,10 @@ modules:
       - ppgemergeuiv4airframer.zip
       name: ppgemergeuiv4airframer
       target-path: resources/
+    - artifacts:
+      - ppgemergeuiv4listreport.zip
+      name: ppgemergeuiv4listreport
+      target-path: resources/
 - name: ppg-Emerge-launchpad
   type: com.sap.application.content
   path: launchpad
@@ -91,6 +95,16 @@ modules:
 - name: ppgemergeuiv4airframer
   type: html5
   path: app/ui.v4.airframer
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: ppgemergeuiv4listreport
+  type: html5
+  path: app/ui.v4.listreport
   build-parameters:
     build-result: dist
     builder: custom
